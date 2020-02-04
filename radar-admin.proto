@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message Query {
+  string user_id = 1;
+  string query = 2;
+}
+
+message QueryResponse {
+  message Table {
+    message Cell {
+      oneof content {
+        string text = 1;
+        double number = 2;
+        uint32 date = 3;
+      }
+    }
+    message Row { repeated Cell cells = 1; }
+    repeated string columns = 1;
+    repeated Row data = 2;
+  }
+  oneof content {
+    string text = 1;
+    Table table = 2;
+  }
+}
+
+service Admin {
+  rpc query(Query) returns (QueryResponse);
+}

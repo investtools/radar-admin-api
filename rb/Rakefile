@@ -1,0 +1,7 @@
+require "bundler/gem_tasks"
+
+task :default => :protoc
+
+task :protoc do
+  system 'grpc_tools_ruby_protoc --ruby_out=./lib --grpc_out=./lib --proto_path=.. radar-admin.proto'
+end

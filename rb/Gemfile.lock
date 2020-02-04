@@ -1,0 +1,21 @@
+PATH
+  remote: .
+  specs:
+    radar-admin-api (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    grpc-tools (1.26.0)
+    rake (12.3.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  grpc-tools
+  radar-admin-api!
+  rake (~> 12.0)
+
+BUNDLED WITH
+   2.1.4
